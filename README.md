@@ -13,16 +13,16 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 ## Jij
 
 <details>
-<summary>uitwerken voor kick-off werkgroep</summary>
+<summary>Uitwerken voor kick-off werkgroep</summary>
 
 ### Auteur:
 Donna Schilperoort
 
 #### Je startniveau:
-blauw 
+Blauw 
 
 #### Je focus:
-surface plane en misschien responsive 
+Surface plane en misschien responsive 
  
 </details>
 
@@ -39,11 +39,11 @@ surface plane en misschien responsive
 https://www.twentyonepilots.com/?frontpage=true
 
 #### Screenshot(s) van de eerste pagina (small screen): 
-hier de naam van de pagina  
+Dit is de homepagina van Twenty one Pilots hun site  
 <img src="images/homepagina.png" width="375px" alt="homepagina webiste twenty one pilots">
 
 #### Screenshot(s) van de tweede pagina (small screen):
-hier de naam van de pagina  
+Dit is de tourpagina van Twenty one Pilots hun site 
 <img src="images/tourpagina.png" width="375px" alt="tourdatums pagina van twenty one pilots">
  
 </details>
