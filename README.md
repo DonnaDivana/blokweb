@@ -56,13 +56,16 @@ Dit is de tourpagina van Twenty one Pilots hun site
 <summary>uitwerken na afloop 2e werkgroep</summary>
 
 ### de hele pagina: 
+<img src="images/Uitwerking_Homepage.jpg" width="375px" alt="breakdown van de hele pagina">
+
+### dynamisch deel: 
+<img src="images/Uitwerking_shopitems.png" width="375px" alt="breakdown van een dynamisch deel">
+
+### wellicht nog een dynamisch deel: 
+<img src="images/Uitwerking_albumset.png" width="375px" alt="breakdown van nog een dynamisch deel">
+
+### de hele pagina: 
 <img src="images/dummy-plaatje.jpg" width="375px" alt="breakdown van de hele pagina">
-
-### dynamisch deel (bijv menu): 
-<img src="images/dummy-plaatje.jpg" width="375px" alt="breakdown van een dynamisch deel">
-
-### wellicht nog een dynamisch deel (bijv filter): 
-<img src="images/dummy-plaatje.jpg" width="375px" alt="breakdown van nog een dynamisch deel">
 
 </details>
 
