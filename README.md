@@ -40,11 +40,11 @@ https://www.twentyonepilots.com/?frontpage=true
 
 #### Screenshot(s) van de eerste pagina (small screen): 
 hier de naam van de pagina  
-<img src="images/homepagina.jpg" width="375px" alt="homepagina webiste twenty one pilots">
+<img src="images/homepagina.png" width="375px" alt="homepagina webiste twenty one pilots">
 
 #### Screenshot(s) van de tweede pagina (small screen):
 hier de naam van de pagina  
-<img src="images/tourpagina.jpg" width="375px" alt="tourdatums pagina van twenty one pilots">
+<img src="images/tourpagina.png" width="375px" alt="tourdatums pagina van twenty one pilots">
  
 </details>
 
