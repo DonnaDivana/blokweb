@@ -1,5 +1,348 @@
 /* CSS Document */
 *, *::after, *::before {
-  box-sizing:border-box;  
+  box-sizing:border-box; 
+  margin: 0; 
+  padding: 0;  
 }
+
+:root{
+  --mainfont: 'Gothic A1', sans-serif;
+  --mainfont2: 'Tenebra'; 
+  --buttonfont: 'shapiro75_heavy' ; 
+  --maincolor: ;  
+  --textcolor: white; 
+  --background-color: black; 
+  --background-color2: #f67cab; 
+  --accent-color: #5FB8CC;
+}
+
+/*fonts*/ 
+@import url(//db.onlinewebfonts.com/c/16bbb616a706b4712d97a5b633802ead?family=Shapiro+75+Heavy+Text);
+@font-face {font-family: "Shapiro 75 Heavy Text"; src: url("//db.onlinewebfonts.com/t/16bbb616a706b4712d97a5b633802ead.eot"); src: url("//db.onlinewebfonts.com/t/16bbb616a706b4712d97a5b633802ead.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/16bbb616a706b4712d97a5b633802ead.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/16bbb616a706b4712d97a5b633802ead.woff") format("woff"), url("//db.onlinewebfonts.com/t/16bbb616a706b4712d97a5b633802ead.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/16bbb616a706b4712d97a5b633802ead.svg#Shapiro 75 Heavy Text") format("svg"); } 
+
+/* Einde fonts*/ 
+
+/******************************/
+/* Header Desktop
+/******************************
+
+header{
+  position: sticky; 
+  z-index: 999;
+  top: 0; 
+  background-color: var(--background-color);
+}
+
+
+header nav ul{
+  font-family: var(--mainfont);
+  list-style: none;
+  padding: 0px;
+  margin: 0;
+  position: sticky; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+
+header nav a{
+  color: var(--textcolor); 
+  text-decoration: none;
+  font-weight: 600; 
+  font-size: 1.5em; 
+  line-height: 2; 
+  text-transform: uppercase; 
+  font-size: 1.3vw;
+  letter-spacing: 0.09vw;
+  transition: ease-in-out 0.5s; 
+
+
+}
+
+header nav a{
+  font-family: var(--mainfont);
+  text-transform: uppercase;
+
+}
+
+header nav a:hover{
+  color: grey; 
+  transition: ease-in-out 0.5s; 
+
+}
+
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+header nav span{
+  color: var(--textcolor); 
+}
+
+
+header nav li{
+  font-family: var(--mainfont);
+  text-transform: uppercase;
+
+}
+
+
+
+/******************************/
+/* Header mobiel */
+/******************************/
+
+Header{
+  display: none; 
+  position: absolute; 
+  left: 1.5em; 
+  z-index: 999;
+  background: transparent;
+}
+
+Header li{
+  padding-top: 1em;
+}
+
+Header nav a{
+  font-family: var(--mainfont);
+  list-style: none;
+  padding: 0px;
+  margin: 0;
+  color: var(--textcolor); 
+  text-decoration: none;
+  font-weight: 600; 
+  font-size: 1.8em; 
+  line-height: 2; 
+  display: block; 
+  text-transform: uppercase; 
+}
+
+/* Einde header mobiel*/ 
+
+
+
+/* Achtergrond Desktop
+
+section:first-of-type img{
+  background-color: var(--background-color2);
+  width: 100%; 
+  height: auto; 
+  position: relative; 
+
+}
+
+Einde achtergrond Desktop*/ 
+
+
+/* Achtergrond Mobiel*/ 
+
+section:first-of-type img{
+  width: 100%; 
+  height: auto; 
+  position: relative; 
+
+}
+
+/* Einde achtergrond Mobiel*/ 
+
+
+/******************************/
+/* Section 1: On tour  */
+/******************************/
+
+/*Twenty one pilots tour text */ 
+
+
+section:first-of-type section {
+position: absolute; 
+display: block;
+top: 3.5em; 
+left: 7em;
+}
+
+section:first-of-type section h1  {
+  color: var(--textcolor);
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  padding-left: 3em;
+  padding-right: 7.5em;
+  display: block;
+  text-align: center;
+}
+
+
+section:first-of-type section h1 span{
+  font-family: var(--mainfont2);
+  padding-top: 3em;
+
+}
+
+section:first-of-type section h1 strong{
+  font-family: var(--mainfont2);
+  font-size: 3em;
+
+
+}
+
+section:first-of-type section h1 em{
+  font-family: var(--buttonfont);
+  color: var(--accent-color);
+  text-transform: uppercase;
+  font-style: normal;
+
+
+}
+
+/* Einde text  */ 
+
+/* Get tickets button */ 
+
+
+section:first-of-type a {
+
+  background: var(--accent-color);
+  text-align: center;
+  text-decoration: none;
+  color: var(--textcolor);
+  text-transform: uppercase;
+  font-family: var(--buttonfont);
+  display: block;
+
+  position: absolute;
+  left: 3em; 
+  bottom:3em; 
+  padding: 1em 3em 1em 3em; 
+  font-size: 1.5em; 
+
+}
+
+/* Einde Get tickets button */ 
+
+
+/******************************/
+/* Section 2: Dragon */
+/******************************/
+
+section:nth-of-type(2){
+  background-image: url('../images/pinkbackground.png');
+  position: relative;
+}
+
+section:nth-of-type(2) h2{
+
+  --shadow-color:rgba(0 0 0 /0.75);
+  font-family: var(--mainfont2);
+  color:var(--textcolor); 
+  text-align: right;
+  font-size: 3em;
+  padding: 1em 0.5em 0em 3em;
+  line-height: 1em;
+  text-shadow:.1em .1em 0 var(--shadow-color);
+
+}
+
+section:nth-of-type(2) h2 span{
+  color:var(--accent-color); 
+}
+
+section:nth-of-type(2) p {
+  display: flex; 
+  font-size: 1.5em;
+  justify-content: flex-end;
+  padding: 1em;
+
+}
+
+section:nth-of-type(2) a {
+  
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: var(--textcolor);
+  text-transform: uppercase;
+  font-family: var(--buttonfont);
+  padding: 1em 2em 1em 2em;
+  background-color: var(--accent-color);
+  position: absolute; 
+  right: 1em; 
+
+}
+
+section:nth-of-type(2) img{
+  width: 100%;
+  height: auto;
+
+}
+
+
+
+
+
+h3{
+  font-family: var(--mainfont);
+  text-transform: uppercase;
+
+
+  }
+  
+
+
+p {
+  font-family: var(--mainfont);
+  color: var(--textcolor); 
+
+}
+
+
+section:nth-of-type(3){
+  background-image: url('../images/swirlbackground.jpg');
+} 
+
+section:nth-of-type(4){
+  background-image: url('../images/gradientbackground.jpg');
+} 
+
+section:nth-of-type(5){
+  background-image: url('../images/bluebackground.jpg');
+} 
+
+section:nth-of-type(6){
+  background-color: black;
+} 
+
+
+
+
+form fieldset{
+  font-family: var(--mainfont);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+input[type="submit"] {
+
+  font-family: var(--mainfont);
+  color: var(--textcolor); 
+  background-color: tomato;
+  padding: 0.5em;
+  margin: 1em; 
+  border-radius: 0.5em; 
+  border: 2px solid white; 
+  cursor: pointer;
+  
+
+}
+
+
+
+
 
