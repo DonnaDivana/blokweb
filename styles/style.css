@@ -8,7 +8,7 @@
 :root{
   --mainfont: 'Gothic A1', sans-serif;
   --mainfont2: 'Tenebra'; 
-  --buttonfont: 'shapiro75_heavy' ; 
+  --buttonfont: 'termina, sans-serif'; 
   --maincolor: ;  
   --textcolor: white; 
   --background-color: black; 
@@ -17,8 +17,28 @@
 }
 
 /*fonts*/ 
-@import url(//db.onlinewebfonts.com/c/16bbb616a706b4712d97a5b633802ead?family=Shapiro+75+Heavy+Text);
-@font-face {font-family: "Shapiro 75 Heavy Text"; src: url("//db.onlinewebfonts.com/t/16bbb616a706b4712d97a5b633802ead.eot"); src: url("//db.onlinewebfonts.com/t/16bbb616a706b4712d97a5b633802ead.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/16bbb616a706b4712d97a5b633802ead.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/16bbb616a706b4712d97a5b633802ead.woff") format("woff"), url("//db.onlinewebfonts.com/t/16bbb616a706b4712d97a5b633802ead.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/16bbb616a706b4712d97a5b633802ead.svg#Shapiro 75 Heavy Text") format("svg"); } 
+
+
+
+h2{
+  font-family: var(--mainfont2);
+  color: var(--textcolor);
+}
+
+h3{
+  font-family: var(--mainfont);
+  text-transform: uppercase;
+  color: var(--textcolor);
+  }
+  
+
+p {
+  font-family: var(--mainfont);
+  color: var(--textcolor); 
+}
+
+
+
 
 /* Einde fonts*/ 
 
@@ -97,22 +117,62 @@ header nav li{
 /* Header mobiel */
 /******************************/
 
-Header{
-  display: none; 
-  position: absolute; 
-  left: 1.5em; 
+
+/* Header mobiel hamburger */
+
+
+header{
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 1em;
   z-index: 999;
-  background: transparent;
 }
 
-Header li{
+header div{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 2em;
+  z-index: 101;
+  margin: 1em;
+
+}
+
+header span{
+  width: 3em;
+  height: .3em; 
+  background-color: var(--textcolor);
+}
+
+
+
+nav {
+  visibility: hidden;
+  position: absolute; 
+  z-index: 100;
+}
+
+nav.uitgeklapt {
+  position: fixed;
+  visibility: visible;
+  background:rgba(0 0 0 /0.75);
+  top: 0; 
+  bottom: 0; 
+  left: 0; 
+  right:0;  
+}
+
+  nav li{
   padding-top: 1em;
 }
 
-Header nav a{
+  nav a{
   font-family: var(--mainfont);
+  text-align: left;
   list-style: none;
-  padding: 0px;
+  padding: 0;
   margin: 0;
   color: var(--textcolor); 
   text-decoration: none;
@@ -146,10 +206,17 @@ section:first-of-type img{
   width: 100%; 
   height: auto; 
   position: relative; 
+  background-color: black;
 
 }
 
 /* Einde achtergrond Mobiel*/ 
+
+
+
+/******************************/
+/* Main html pagina 1 */
+/******************************
 
 
 /******************************/
@@ -169,6 +236,7 @@ left: 7em;
 section:first-of-type section h1  {
   color: var(--textcolor);
   display: flex; 
+  font-size: 4.3vw;
   flex-direction: column;
   align-items: center;
   padding-left: 3em;
@@ -181,7 +249,6 @@ section:first-of-type section h1  {
 section:first-of-type section h1 span{
   font-family: var(--mainfont2);
   padding-top: 3em;
-
 }
 
 section:first-of-type section h1 strong{
@@ -212,13 +279,15 @@ section:first-of-type a {
   text-decoration: none;
   color: var(--textcolor);
   text-transform: uppercase;
-  font-family: var(--buttonfont);
+  font-family: 'termina'; 
+  font-weight: 700;
+  font-style: normal;
   display: block;
 
   position: absolute;
   left: 3em; 
   bottom:3em; 
-  padding: 1em 3em 1em 3em; 
+  padding: 1em 2em 1em 2em; 
   font-size: 1.5em; 
 
 }
@@ -230,12 +299,13 @@ section:first-of-type a {
 /* Section 2: Dragon */
 /******************************/
 
-section:nth-of-type(2){
+.homepagina section:nth-of-type(2){
   background-image: url('../images/pinkbackground.png');
   position: relative;
+  z-index: 3;
 }
 
-section:nth-of-type(2) h2{
+.homepagina section:nth-of-type(2) h2{
 
   --shadow-color:rgba(0 0 0 /0.75);
   font-family: var(--mainfont2);
@@ -248,11 +318,11 @@ section:nth-of-type(2) h2{
 
 }
 
-section:nth-of-type(2) h2 span{
+.homepagina section:nth-of-type(2) h2 span{
   color:var(--accent-color); 
 }
 
-section:nth-of-type(2) p {
+.homepagina section:nth-of-type(2) p {
   display: flex; 
   font-size: 1.5em;
   justify-content: flex-end;
@@ -260,14 +330,14 @@ section:nth-of-type(2) p {
 
 }
 
-section:nth-of-type(2) a {
+.homepagina section:nth-of-type(2) a {
   
   display: block;
   text-align: center;
   text-decoration: none;
   color: var(--textcolor);
   text-transform: uppercase;
-  font-family: var(--buttonfont);
+  font-family: var(--mainfont);
   padding: 1em 2em 1em 2em;
   background-color: var(--accent-color);
   position: absolute; 
@@ -275,72 +345,310 @@ section:nth-of-type(2) a {
 
 }
 
-section:nth-of-type(2) img{
-  width: 100%;
-  height: auto;
+/* draak plaatje */ 
 
-}
+@keyframes dragon-animation {
 
-
-
-
-
-h3{
-  font-family: var(--mainfont);
-  text-transform: uppercase;
-
+  100% {
+    transform: rotate(1turn);
 
   }
-  
+}
 
 
-p {
-  font-family: var(--mainfont);
-  color: var(--textcolor); 
+.homepagina section:nth-of-type(2) img {
+  width: 150%;
+  overflow: hidden;
+  height: auto;
+  margin-left: -13em;
+  margin-bottom: -5em; 
+
+}
+
+.homepagina section:nth-of-type(2) img.draaien {
+  animation-name: dragon-animation; 
+  animation-duration:.3s;
+  animation-iteration-count: 5;
+
 
 }
 
 
-section:nth-of-type(3){
+/******************************/
+/* Section 3: Merch */
+/******************************/
+
+
+/* Achtergrond */ 
+
+.homepagina section:nth-of-type(3){
   background-image: url('../images/swirlbackground.jpg');
+  height: auto;
+  background-size: contain;
+
 } 
 
-section:nth-of-type(4){
+
+/* 3 plaatjes merch */ 
+
+
+.homepagina section:nth-of-type(3) ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 2em;
+  padding-top: 6em;
+  padding-bottom: 10em;
+  justify-content: center;
+}
+
+.homepagina section:nth-of-type(3) ul li{
+  padding-left: 1em;
+}
+
+.homepagina section:nth-of-type(3) ul li a {
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+.homepagina section:nth-of-type(3) a img {
+  width: 100%;
+
+}
+
+
+/******************************/
+/* Section 4: Album box set  */
+/******************************/
+
+
+.homepagina section:nth-of-type(4){
   background-image: url('../images/gradientbackground.jpg');
+  text-align: center;
+  align-items: center;
+  background-size: 100% 104%;
+
+
+  padding: 2em 2em 8em 2em;
 } 
 
-section:nth-of-type(5){
+.homepagina section:nth-of-type(4) img{
+  width: 100%;
+}
+
+.homepagina section:nth-of-type(4) h2 {
+  font-size: 4em;
+  padding-bottom: 0.3em;
+}
+
+.homepagina section:nth-of-type(4) h3 {
+  font-size: 1.5em;
+  padding-bottom: 1em;
+}
+
+.homepagina section:nth-of-type() ul{
+  padding-bottom: 2em;
+}
+
+.homepagina section:nth-of-type(4) li {
+  font-family: var(--mainfont);
+  color: var(--textcolor);
+  font-size: 1.3em;
+  text-decoration: none;
+  list-style: none;
+  text-transform: uppercase;
+  line-height: 2em;
+}
+
+.homepagina section:nth-of-type(4) a{
+
+  background: var(--accent-color);
+  text-align: center;
+  text-decoration: none;
+  color: var(--textcolor);
+  font-family: var(--mainfont);
+  display: block;
+
+  padding: 1em 1em 1em 1em; 
+  font-size: 1.5em; 
+
+}
+
+
+/******************************/
+/* Section 5: Videos  */
+/******************************/
+
+.homepagina section:nth-of-type(5) {
+
+  background-image: url("../images/Whitetexturebackground.jpg"); 
+}
+
+.homepagina section:nth-of-type(5) ul{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  margin: 0;
+  padding: 0;
+}
+
+.homepagina section:nth-of-type(5) li{
+  position: relative;
+  min-width: 63vw;
+  margin: 2em 1em;
+}
+
+.homepagina section:nth-of-type(5) img{
+  width: 100%;
+
+}
+
+.homepagina section:nth-of-type(5) img[class^='overlay'] {
+  position: absolute;
+  width: 80%;
+  left: 2em;
+  bottom: 2em; 
+}
+.homepagina section:nth-of-type(5) img.overlay-saturday{
+  width: 60%;
+  left: 3em; 
+  bottom: 1em; 
+}
+
+
+  /*  Bron vormgeving button: Positioneren oefening 1, Sanne Codepen */
+
+
+.homepagina section:nth-of-type(5) a{ 
+
+  width:4em;
+  height: 4em;
+  margin:0;
+  padding:0;
+
+  appearance:none;
+  
+  background-color:var(--background-color2);
+
+  /*  truc om een driehoek te maken met een conic-gradient */
+  background-image:conic-gradient(at right center, transparent 240.5deg, var(--textcolor) 240.5deg 299.5deg, transparent 299.5deg);
+  background-position:58% center;
+  background-size:42% 48%;
+  background-repeat:no-repeat;
+
+  border-radius:50%;
+  border:none;
+  outline:none;
+  
+  /* de tekst is doorzichtig */
+  color:transparent;
+  /* de text in de button kan niet geselecteerd worden */
+  user-select:none;
+  /* de cursor wordt een klik-pointer */
+  cursor:pointer;
+  
+  /*  Einde bron Sanne */
+
+  position: absolute;
+  left:calc(50% - 2.5em);
+  top:calc(50% - 2.5em);
+
+    /*  Einde bron Sanne */
+
+}  
+
+
+
+/******************************/
+/* Section 6: Formulier  */
+/******************************/
+
+section:nth-of-type(6) {
   background-image: url('../images/bluebackground.jpg');
-} 
+  padding: 5em 3em 5em 3em; 
+  display: block;
 
-section:nth-of-type(6){
-  background-color: black;
-} 
+}
+
+  /*  Formulier */
 
 
-
+form{
+  font-display: block;
+  align-items: center;
+  appearance: none;
+}
 
 form fieldset{
   font-family: var(--mainfont);
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  appearance: none;
+
+  border: none;
+}
+
+input[type="email"] {
+  border: none;
+  font-family: var(--mainfont);
+  color: var(--accent-color); 
+  font-size: 1.5em;
+  padding: 0.5em 1em 0.5em 1em;
+  width: 300px 
 }
 
 
 input[type="submit"] {
 
+  border: none;
   font-family: var(--mainfont);
   color: var(--textcolor); 
-  background-color: tomato;
-  padding: 0.5em;
-  margin: 1em; 
-  border-radius: 0.5em; 
-  border: 2px solid white; 
-  cursor: pointer;
-  
+  background-color: var(--background-color2); 
+  font-size: 1.5em;
+  margin-top: 1em;
+  padding: 0.5em 1em 0.5em 1em;
+  width: 300px 
 
 }
+
+/******************************/
+/* Einde Main html pagina 1 */
+/******************************/
+
+
+/******************************/
+/* Main html pagina 2 */
+/******************************/
+
+
+
+.tourpagina section:nth-of-type(2){
+  margin-top: -0.5em; 
+  background-color: black;
+  height: 100em; 
+}
+
+ 
+/******************************/
+/* Section 7: Footer  */
+/******************************/ 
+
+
+footer {
+  background-color: black;
+
+} 
+
+footer p{
+  color: #f67cab;
+}
+
+
+
 
 
 
