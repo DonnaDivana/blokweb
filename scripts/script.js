@@ -1,21 +1,25 @@
 // JavaScript Document
 
-var mobielNav = document.querySelector('nav'); 
-var hamburgerIcoon = document.querySelector('header div');
+
+var hamburgerIcoon = document.querySelector('header nav button');
 
 var dragonTurn = document.querySelector('section:nth-of-type(2) img')
 
 
+
+hamburgerIcoon.addEventListener("click", navUitklappen);
+
+if(dragonTurn) {
+    dragonTurn.addEventListener("click", draaien);
+}
+
+
+
 function navUitklappen() {
-    mobielNav.classList.toggle("uitgeklapt");
+   document.body.classList.toggle("uitgeklapt");
 }
 
 function draaien() {
     dragonTurn.classList.toggle("draaien"); 
 }
-
-
-
-hamburgerIcoon.addEventListener('click', navUitklappen);
-dragonTurn.addEventListener("click", draaien);
 

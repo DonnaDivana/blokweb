@@ -9,18 +9,32 @@
   --mainfont: 'Gothic A1', sans-serif;
   --mainfont2: 'Tenebra'; 
   --buttonfont: 'termina, sans-serif'; 
-  --maincolor: ;  
   --textcolor: white; 
   --background-color: black; 
   --background-color2: #f67cab; 
+  --footer-text: #f67cab; 
   --accent-color: #5FB8CC;
+  --formfont: 'good-headline-web-pro-wide', sans-serif; 
+  --form-color2: #f67cab; 
+  --shadow-color:rgba(0 0 0 /0.75);
+  --link-hover: #f67cab; 
 }
+
+/* @media (prefers-color-scheme:dark) {  
+  :root {
+    --background-color2: purple; 
+    --accent-color: purple; 
+    
+  }
+}
+
+*/
+
+
 
 /*fonts*/ 
 
-
-
-h2{
+.homepagina h2{
   font-family: var(--mainfont2);
   color: var(--textcolor);
 }
@@ -121,7 +135,7 @@ header nav li{
 /* Header mobiel hamburger */
 
 
-header{
+header nav button{
   width: 100%;
   height: auto;
   position: fixed;
@@ -129,7 +143,7 @@ header{
   z-index: 999;
 }
 
-header div{
+header nav button{
 
   display: flex;
   flex-direction: column;
@@ -137,32 +151,75 @@ header div{
   height: 2em;
   z-index: 101;
   margin: 1em;
+  background-color: transparent;
+  border-style: none;
 
 }
 
-header span{
+header nav button span {
   width: 3em;
   height: .3em; 
   background-color: var(--textcolor);
+  transform: rotate(0deg);
 }
 
 
 
 nav {
-  visibility: hidden;
   position: absolute; 
   z-index: 100;
+
 }
 
-nav.uitgeklapt {
-  position: fixed;
-  visibility: visible;
-  background:rgba(0 0 0 /0.75);
+nav ul {
+  visibility: hidden;
   top: 0; 
   bottom: 0; 
   left: 0; 
   right:0;  
+  transform: translateX(-100%); 
+  transition: .3s; 
 }
+
+
+
+
+.uitgeklapt nav ul {
+  background:rgba(0 0 0 /0.75);
+  position: fixed;
+  visibility: visible;
+  transform: translateX(0%); 
+  transition: .3s; 
+  
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+} 
+
+.uitgeklapt nav ul li {
+  margin-left: 2em; 
+}
+
+.uitgeklapt nav ul li:first-of-type {
+  margin-top: 5em;
+}
+
+.uitgeklapt button span {
+  transition: .3s;
+}
+.uitgeklapt button span:first-of-type {
+  transform: translateY(0.85em) rotate(45deg);
+}
+
+.uitgeklapt button span:nth-of-type(2) {
+  width: 0em;
+}
+
+.uitgeklapt button span:last-of-type {
+  transform: translateY(-0.85em) rotate(-45deg);
+}
+
+
 
   nav li{
   padding-top: 1em;
@@ -177,10 +234,15 @@ nav.uitgeklapt {
   color: var(--textcolor); 
   text-decoration: none;
   font-weight: 600; 
-  font-size: 1.8em; 
+  font-size: 2em; 
   line-height: 2; 
   display: block; 
   text-transform: uppercase; 
+}
+
+nav a:hover{
+  color: var(--link-hover); 
+  transition: ease-in-out 0.5s; 
 }
 
 /* Einde header mobiel*/ 
@@ -206,7 +268,11 @@ section:first-of-type img{
   width: 100%; 
   height: auto; 
   position: relative; 
-  background-color: black;
+
+}
+
+.homepagina section:first-of-type {
+  background-color: var(--background-color);
 
 }
 
@@ -226,14 +292,14 @@ section:first-of-type img{
 /*Twenty one pilots tour text */ 
 
 
-section:first-of-type section {
+section:first-of-type div:first-of-type {
 position: absolute; 
 display: block;
 top: 3.5em; 
 left: 7em;
 }
 
-section:first-of-type section h1  {
+section:first-of-type div:first-of-type h1  {
   color: var(--textcolor);
   display: flex; 
   font-size: 4.3vw;
@@ -246,19 +312,19 @@ section:first-of-type section h1  {
 }
 
 
-section:first-of-type section h1 span{
+section:first-of-type div:first-of-type h1 span{
   font-family: var(--mainfont2);
   padding-top: 3em;
 }
 
-section:first-of-type section h1 strong{
+section:first-of-type div:first-of-type h1 strong{
   font-family: var(--mainfont2);
   font-size: 3em;
 
 
 }
 
-section:first-of-type section h1 em{
+section:first-of-type div:first-of-type h1 em{
   font-family: var(--buttonfont);
   color: var(--accent-color);
   text-transform: uppercase;
@@ -272,7 +338,7 @@ section:first-of-type section h1 em{
 /* Get tickets button */ 
 
 
-section:first-of-type a {
+.homepagina section:first-of-type a {
 
   background: var(--accent-color);
   text-align: center;
@@ -307,7 +373,6 @@ section:first-of-type a {
 
 .homepagina section:nth-of-type(2) h2{
 
-  --shadow-color:rgba(0 0 0 /0.75);
   font-family: var(--mainfont2);
   color:var(--textcolor); 
   text-align: right;
@@ -379,12 +444,14 @@ section:first-of-type a {
 /******************************/
 
 
+
 /* Achtergrond */ 
 
 .homepagina section:nth-of-type(3){
   background-image: url('../images/swirlbackground.jpg');
   height: auto;
-  background-size: contain;
+  background-position: left;
+  background-size: 200%;
 
 } 
 
@@ -400,6 +467,7 @@ section:first-of-type a {
   padding-top: 6em;
   padding-bottom: 10em;
   justify-content: center;
+  list-style: none;
 }
 
 .homepagina section:nth-of-type(3) ul li{
@@ -409,8 +477,11 @@ section:first-of-type a {
 .homepagina section:nth-of-type(3) ul li a {
   display: flex;
   flex-direction: column;
+}
 
-
+.homepagina section:nth-of-type(3) ul a:hover {
+  opacity: 0.7;
+  transition: 0.3s; 
 }
 
 .homepagina section:nth-of-type(3) a img {
@@ -560,13 +631,22 @@ section:first-of-type a {
 
 }  
 
+.homepagina section:nth-of-type(5) a:hover { 
+  
+  opacity: 0.8;
+  transition: 0.3s; 
+
+}
+
+
+
 
 
 /******************************/
 /* Section 6: Formulier  */
 /******************************/
 
-section:nth-of-type(6) {
+section:last-of-type {
   background-image: url('../images/bluebackground.jpg');
   padding: 5em 3em 5em 3em; 
   display: block;
@@ -624,13 +704,113 @@ input[type="submit"] {
 /* Main html pagina 2 */
 /******************************/
 
-
-
-.tourpagina section:nth-of-type(2){
-  margin-top: -0.5em; 
-  background-color: black;
-  height: 100em; 
+.tourpagina section:first-of-type{
+  background-color: var(--background-color); 
 }
+
+.tourpagina section:nth-of-type(2) {
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tourpagina h2 {
+  font-family: var(--formfont);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 4em;
+  color: var(--accent-color); 
+  position: absolute; 
+  top: 6em; 
+  left: 0.5em; 
+  right: 0.5em; 
+
+}
+
+
+
+/*  Ticket kopen ordered list */
+
+.tourpagina ol{
+  margin: -20em 1em 1em 1em; 
+  padding: 3em 1em; 
+  z-index: 80; 
+}
+
+
+.tourpagina ol li {
+
+  font-family: var(--formfont);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: var(--accent-color); 
+  font-size: 1.3em;
+  line-height: 1em; 
+
+
+  display: flex; 
+  flex-direction: column; 
+  order: 2; 
+  margin-top: 2em; 
+
+
+}
+
+
+.tourpagina time{
+  font-size: 0.8em;
+  order: -1; 
+  margin-bottom: 0.5em; 
+
+}
+
+ time::after {
+
+  display: inline-block; 
+  content: ''; 
+  margin-bottom: 0.1em; 
+  width: 8em; 
+  height: 0.3em; 
+  background-color: var(--accent-color); 
+}
+
+.tourpagina section:nth-of-type(2) strong {
+  color: var(--form-color2); 
+  order: 3; 
+  margin-top: 0.1em; 
+  margin-bottom: 1em; 
+
+}
+
+.tourpagina section:nth-of-type(2) a{
+  display: block; 
+  font-family: var(--mainfont);
+  order: 4; 
+  width: fit-content;
+
+  text-align: center;
+  text-decoration: none;
+  color: var(--textcolor);
+  text-transform: uppercase;
+  font-family: var(--mainfont);
+  padding: 0.5em 1em 0.5em 1em; 
+
+  background-color: var(--form-color2);
+}
+
+.tourpagina section:nth-of-type(2) a::before {
+
+  display: inline-block;
+  content: ''; 
+  margin-bottom: 0.1em; 
+  width: 8em; 
+  height: 0.3em; 
+  background-color: var(--accent-color); 
+
+}
+
 
  
 /******************************/
@@ -639,12 +819,12 @@ input[type="submit"] {
 
 
 footer {
-  background-color: black;
+  background-color:var(--background-color);
 
 } 
 
 footer p{
-  color: #f67cab;
+  color: var(--footer-text);
 }
 
 
