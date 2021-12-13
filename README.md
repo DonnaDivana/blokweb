@@ -204,7 +204,7 @@ De lijst met 3 afbeeldingen van de Merch moet nog een goede alt text krijgen, ik
 
 Oplossing: 
 
-<img src="alt-text.png" width="375px" alt=" alt text afbeeldingen">
+<img src="images/alt-text.png" width="375px" alt=" alt text afbeeldingen">
 
 
 #### bevindingen low contrast bril. 
@@ -224,11 +224,11 @@ Ik heb mijn website door Maxime uit onze klas laten bekijken die kleurenblind is
 Ook heb ik de kleurenblindheidstest gedaan met Sim Daltonism dit zijn screenshots daarvan: 
 
 
-<img src="Monochromacy-test.png" width="375px" alt=" kleurenblind test">
+<img src="images/Monochromacy-test.png" width="375px" alt=" kleurenblind test">
 
-<img src="tritanopia-test.png" width="375px" alt="Kleurenblind test ">
+<img src="images/tritanopia-test.png" width="375px" alt="Kleurenblind test ">
 
-<img src="Deuteranopia-test.png" width="375px" alt="KLeurenblind test ">
+<img src="images/Deuteranopia-test.png" width="375px" alt="KLeurenblind test ">
 
 </details>
 
@@ -244,7 +244,7 @@ Ook heb ik de kleurenblindheidstest gedaan met Sim Daltonism dit zijn screenshot
 ### Stand van zaken
 Ik ben erg blij met hem hamburgermenu dit ik nu heb gemaakt: 
 
-<img src="Navigatie-hamburgermenu-css.png" width="375px" alt="Css hamburgermenu uitklappen ">
+<img src="images/Navigatie-hamburgermenu-css.png" width="375px" alt="Css hamburgermenu uitklappen ">
 
 
 
@@ -293,9 +293,9 @@ Het enige waar ik nog een beetje moeite mee had is een focus state om mijn hambu
 
 hier screenshot(s) van je eindresultaat
 
-<img src="Eindresultaat-home.png" width="375px" alt="Eindresultaat homepagina ">
+<img src="Eindresultaat-home.png" width="375px" alt="Eindresultaat homepagina">
 
-<img src="Eindresultaat-tour.png" width="375px" alt="Eindresultaat Tourpagina ">
+<img src="Eindresultaat-tour.png" width="375px" alt="Eindresultaat Tourpagina">
 
 
 
