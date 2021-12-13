@@ -5,6 +5,10 @@
   padding: 0;  
 }
 
+/******************************/
+/* Algemene styling  */
+/******************************/
+
 :root{
   --mainfont: 'Gothic A1', sans-serif;
   --mainfont2: 'Tenebra'; 
@@ -14,10 +18,19 @@
   --background-color2: #f67cab; 
   --footer-text: #f67cab; 
   --accent-color: #5FB8CC;
-  --formfont: 'good-headline-web-pro-wide', sans-serif; 
-  --form-color2: #f67cab; 
+  --second-font: 'good-headline-web-pro-wide', sans-serif; 
+  --accent-color2: #f67cab; 
   --shadow-color:rgba(0 0 0 /0.75);
   --link-hover: #f67cab; 
+  --link-active: #3B577C; 
+  --button-hover: #3B577C; 
+  --button-border1: #f67cab; 
+  --button-border2: #5FB8CC;; 
+  --button-active: blue; 
+  --outline-color: rgb(68, 68, 196); 
+
+  --link-visited: #5FB8CC;
+
 }
 
 /* @media (prefers-color-scheme:dark) {  
@@ -30,6 +43,9 @@
 
 */
 
+/******************************/
+/* Lettertypes  */
+/******************************/
 
 
 /*fonts*/ 
@@ -53,77 +69,7 @@ p {
 
 
 
-
 /* Einde fonts*/ 
-
-/******************************/
-/* Header Desktop
-/******************************
-
-header{
-  position: sticky; 
-  z-index: 999;
-  top: 0; 
-  background-color: var(--background-color);
-}
-
-
-header nav ul{
-  font-family: var(--mainfont);
-  list-style: none;
-  padding: 0px;
-  margin: 0;
-  position: sticky; 
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-
-}
-
-
-header nav a{
-  color: var(--textcolor); 
-  text-decoration: none;
-  font-weight: 600; 
-  font-size: 1.5em; 
-  line-height: 2; 
-  text-transform: uppercase; 
-  font-size: 1.3vw;
-  letter-spacing: 0.09vw;
-  transition: ease-in-out 0.5s; 
-
-
-}
-
-header nav a{
-  font-family: var(--mainfont);
-  text-transform: uppercase;
-
-}
-
-header nav a:hover{
-  color: grey; 
-  transition: ease-in-out 0.5s; 
-
-}
-
-
-header nav ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-header nav span{
-  color: var(--textcolor); 
-}
-
-
-header nav li{
-  font-family: var(--mainfont);
-  text-transform: uppercase;
-
-}
 
 
 
@@ -134,10 +80,19 @@ header nav li{
 
 /* Header mobiel hamburger */
 
+header {
+  position: fixed; 
+  background-color: rgba(0 0 0 /0.20); 
+  overflow: hidden;
+  z-index: 99;
+  width: 100vh; 
+  height: 4.3em;
+
+}
+
 
 header nav button{
   width: 100%;
-  height: auto;
   position: fixed;
   top: 1em;
   z-index: 999;
@@ -148,12 +103,19 @@ header nav button{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 3em; 
   height: 2em;
   z-index: 101;
   margin: 1em;
   background-color: transparent;
   border-style: none;
+  cursor: pointer; 
 
+}
+
+header nav button:focus-visible {
+  appearance: none; 
+  outline: 0.4em solid var(--outline-color); 
 }
 
 header nav button span {
@@ -182,7 +144,7 @@ nav ul {
 }
 
 
-
+/* Hamburger menu uitgeklapt */
 
 .uitgeklapt nav ul {
   background:rgba(0 0 0 /0.75);
@@ -198,6 +160,7 @@ nav ul {
 
 .uitgeklapt nav ul li {
   margin-left: 2em; 
+  list-style: none;
 }
 
 .uitgeklapt nav ul li:first-of-type {
@@ -221,11 +184,12 @@ nav ul {
 
 
 
-  nav li{
+
+  nav li {
   padding-top: 1em;
 }
 
-  nav a{
+  nav a {
   font-family: var(--mainfont);
   text-align: left;
   list-style: none;
@@ -240,26 +204,29 @@ nav ul {
   text-transform: uppercase; 
 }
 
-nav a:hover{
+
+/* Toegankelijkheids styling*/ 
+
+header nav a:hover {
   color: var(--link-hover); 
-  transition: ease-in-out 0.5s; 
+  transition: ease-in-out .5s; 
 }
+
+header nav a:focus-visible {
+  outline: none; 
+  appearance: none; 
+  color: var(--link-hover); 
+}
+
+
+header nav a:active {
+  color: var(--link-active); 
+
+}
+
 
 /* Einde header mobiel*/ 
 
-
-
-/* Achtergrond Desktop
-
-section:first-of-type img{
-  background-color: var(--background-color2);
-  width: 100%; 
-  height: auto; 
-  position: relative; 
-
-}
-
-Einde achtergrond Desktop*/ 
 
 
 /* Achtergrond Mobiel*/ 
@@ -292,14 +259,8 @@ section:first-of-type img{
 /*Twenty one pilots tour text */ 
 
 
-section:first-of-type div:first-of-type {
-position: absolute; 
-display: block;
-top: 3.5em; 
-left: 7em;
-}
 
-section:first-of-type div:first-of-type h1  {
+section:first-of-type  h1  {
   color: var(--textcolor);
   display: flex; 
   font-size: 4.3vw;
@@ -307,25 +268,31 @@ section:first-of-type div:first-of-type h1  {
   align-items: center;
   padding-left: 3em;
   padding-right: 7.5em;
-  display: block;
   text-align: center;
+  position: absolute; 
+  display: block;
+  top: 3.5em; 
+  left: 6em;
+  
 }
 
 
-section:first-of-type div:first-of-type h1 span{
+section:first-of-type  h1 span{
   font-family: var(--mainfont2);
   padding-top: 3em;
 }
 
-section:first-of-type div:first-of-type h1 strong{
+section:first-of-type  h1 strong{
   font-family: var(--mainfont2);
   font-size: 3em;
 
-
 }
 
-section:first-of-type div:first-of-type h1 em{
-  font-family: var(--buttonfont);
+
+section:first-of-type h1 em{
+  font-family: var(--second-font);
+  font-weight: 700; 
+  font-size: 1.2em; 
   color: var(--accent-color);
   text-transform: uppercase;
   font-style: normal;
@@ -356,7 +323,47 @@ section:first-of-type div:first-of-type h1 em{
   padding: 1em 2em 1em 2em; 
   font-size: 1.5em; 
 
+  appearance: none; 
+  outline: none; 
+
 }
+
+/* Toegankelijkheids styling*/ 
+
+.homepagina section:first-of-type a:hover {
+  transform:translate y(-.5em);
+
+
+  background-color: var(--button-hover); 
+  transition: .3s ease-in-out; 
+  
+  box-shadow: 0 .5em var(--button-border1),
+  inset 0 0 var(--button-border1); 
+  cursor: pointer;
+
+}
+
+.homepagina section:first-of-type a:focus-visible {
+  transform:translate y(-.5em);
+
+
+  background-color: var(--button-hover); 
+  transition: .3s ease-in-out; 
+  
+  box-shadow: 0 .5em var(--button-border1),
+  inset 0 0 var(--button-border1); 
+  cursor: pointer;
+
+}
+
+
+
+.homepagina section:first-of-type a:active {
+  background-color: var(--button-active); 
+}
+
+
+
 
 /* Einde Get tickets button */ 
 
@@ -409,6 +416,42 @@ section:first-of-type div:first-of-type h1 em{
   right: 1em; 
 
 }
+
+/* Toegankelijkheids styling*/ 
+
+.homepagina section:nth-of-type(2) a:hover {
+  transform:translate y(-.5em);
+
+
+  background-color: var(--button-hover); 
+  transition: .3s ease-in-out; 
+  
+  box-shadow: 0 .5em var(--button-border2),
+  inset 0 0 var(--button-border1); 
+  cursor: pointer;
+}
+
+.homepagina section:nth-of-type(2) a:focus-visible {
+  transform:translate y(-.5em);
+
+
+  background-color: var(--button-hover); 
+  transition: .3s ease-in-out; 
+  
+  box-shadow: 0 .5em var(--button-border2),
+  inset 0 0 var(--button-border1); 
+  cursor: pointer;
+}
+
+
+
+.homepagina section:nth-of-type(2) a:active {
+  background-color: var(--button-active); 
+
+}
+
+
+
 
 /* draak plaatje */ 
 
@@ -479,10 +522,34 @@ section:first-of-type div:first-of-type h1 em{
   flex-direction: column;
 }
 
-.homepagina section:nth-of-type(3) ul a:hover {
+
+/* toegankelijkheids styling */ 
+
+.homepagina section#Merchsection ul li a:hover {
+  appearance: none;
+  outline: none;
   opacity: 0.7;
   transition: 0.3s; 
 }
+
+.homepagina section#Merchsection ul li a:focus-visible {
+  appearance: none;
+  outline: none;
+  opacity: 0.7;
+  transition: 0.3s; 
+  border: 0.3em solid var(--outline-color); 
+
+}
+
+.homepagina section#Merchsection ul li a:active {
+  background-color: var(--link-active);
+
+}
+
+
+/* toegankelijkheids styling einde */ 
+
+
 
 .homepagina section:nth-of-type(3) a img {
   width: 100%;
@@ -514,12 +581,13 @@ section:first-of-type div:first-of-type h1 em{
   padding-bottom: 0.3em;
 }
 
+
 .homepagina section:nth-of-type(4) h3 {
   font-size: 1.5em;
   padding-bottom: 1em;
 }
 
-.homepagina section:nth-of-type() ul{
+.homepagina section:nth-of-type(4) ul{
   padding-bottom: 2em;
 }
 
@@ -546,6 +614,38 @@ section:first-of-type div:first-of-type h1 em{
   font-size: 1.5em; 
 
 }
+
+.homepagina section:nth-of-type(4) a:hover {
+  transform:translate y(-.5em);
+
+
+  background-color: var(--button-hover); 
+  transition: .3s ease-in-out; 
+  
+  box-shadow: 0 .5em var(--button-border2),
+  inset 0 0 var(--button-border1); 
+  cursor: pointer;
+
+}
+
+.homepagina section:nth-of-type(4) a:focus-visible {
+  transform:translate y(-.5em);
+
+
+  background-color: var(--button-hover); 
+  transition: .3s ease-in-out; 
+  
+  box-shadow: 0 .5em var(--button-border2),
+  inset 0 0 var(--button-border1); 
+  cursor: pointer;
+}
+
+
+.homepagina section:nth-of-type(4) a:active {
+  background-color: var(--button-active); 
+
+}
+
 
 
 /******************************/
@@ -631,15 +731,26 @@ section:first-of-type div:first-of-type h1 em{
 
 }  
 
+    /*  Toegankelijkheids styling  */
+
+
 .homepagina section:nth-of-type(5) a:hover { 
   
-  opacity: 0.8;
-  transition: 0.3s; 
+  opacity: .8;
+  transition: .3s; 
 
 }
 
-
-
+.homepagina section:nth-of-type(5) a:focus-visible { 
+  transform: scale(1.2); 
+  transition: .5s;
+  background-color: var(--button-hover); 
+  transition: .3s ease-in-out; 
+  
+  box-shadow: 0 .5em var(--button-border2),
+  inset 0 0 var(--button-border1); 
+  cursor: pointer;
+}
 
 
 /******************************/
@@ -695,14 +806,50 @@ input[type="submit"] {
 
 }
 
+input:focus-visible {
+  appearance: none;
+}
+
+input[type="submit"]:hover{
+  background-color: var(--button-hover);
+  transition: .3s; 
+
+}
+
+
+input[type="email"]:focus-visible {
+  transform: scale(1.2); 
+  background-color: white;
+  outline: 0.2em solid var(--accent-color2); 
+
+}
+
+input[type="submit"]:focus-visible {
+  transform: scale(1.2); 
+  outline: 0.5em solid var(--button-hover); 
+
+}
+
+
+
+
+
+
 /******************************/
 /* Einde Main html pagina 1 */
 /******************************/
 
 
+
+
+
+
 /******************************/
 /* Main html pagina 2 */
 /******************************/
+
+
+
 
 .tourpagina section:first-of-type{
   background-color: var(--background-color); 
@@ -716,7 +863,7 @@ input[type="submit"] {
 }
 
 .tourpagina h2 {
-  font-family: var(--formfont);
+  font-family: var(--second-font);
   text-transform: uppercase;
   font-weight: 700;
   font-size: 4em;
@@ -741,7 +888,7 @@ input[type="submit"] {
 
 .tourpagina ol li {
 
-  font-family: var(--formfont);
+  font-family: var(--second-font);
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.2px;
@@ -777,7 +924,7 @@ input[type="submit"] {
 }
 
 .tourpagina section:nth-of-type(2) strong {
-  color: var(--form-color2); 
+  color: var(--accent-color2); 
   order: 3; 
   margin-top: 0.1em; 
   margin-bottom: 1em; 
@@ -797,8 +944,11 @@ input[type="submit"] {
   font-family: var(--mainfont);
   padding: 0.5em 1em 0.5em 1em; 
 
-  background-color: var(--form-color2);
+  background-color: var(--accent-color2); 
 }
+
+/* Bron: Opdracht states 1 voor het lijntje die verschijnt bij hover*/ 
+
 
 .tourpagina section:nth-of-type(2) a::before {
 
@@ -808,8 +958,66 @@ input[type="submit"] {
   width: 8em; 
   height: 0.3em; 
   background-color: var(--accent-color); 
+  transform:scalex(0);
+  transition: .3s; 
 
 }
+
+.tourpagina section:nth-of-type(2) a:hover::before {
+  transform:scalex(1);
+  background-color: var(--button-hover);
+
+}
+
+.tourpagina section:nth-last-of-type(2) a:hover {
+  transition: .3s ease-in-out; 
+  box-shadow: 0 .5em var(--button-border2),
+  inset 0 0 var(--button-border1); 
+  cursor: pointer;
+}
+
+.tourpagina section:nth-of-type(2) a:focus-visible::before {
+  transform:scalex(1);
+  background-color: var(--button-hover); 
+}
+
+.tourpagina section:nth-last-of-type(2) a:focus-visible {
+  transition: .3s ease-in-out; 
+  box-shadow: 0 .5em var(--button-border2),
+  inset 0 0 var(--button-border1); 
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+
+
+/* Animatie tour dates tekst */
+
+/* Bron: Opdracht animatie 1*/ 
+
+
+@keyframes text-jump-animation {
+  0% {
+    transform:translateY(0);
+  }
+  100% {
+    transform:translateY(-8rem);
+  }
+}
+
+.tourpagina section:first-of-type:hover h2 {
+  animation-name: text-jump-animation; 
+  animation-duration:.5s;
+  animation-iteration-count: infinite; 
+  animation-direction:alternate;
+  animation-timing-function:cubic-bezier(0.125, 0.995, 1.000, 1);
+}
+
+  /* Bron bezier: https://matthewlein.com/tools/ceaser */
+
+
+/* Einde Bron: Opdracht animatie 1*/ 
+
 
 
  
@@ -820,11 +1028,16 @@ input[type="submit"] {
 
 footer {
   background-color:var(--background-color);
+  height: 5em; 
 
 } 
 
 footer p{
   color: var(--footer-text);
+  text-align: center;
+  align-items: center;
+  padding-top: 2em; 
+  font-size: 1.1em; 
 }
 
 
